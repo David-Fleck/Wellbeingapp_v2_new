@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Typography */
+  --font-family-primary: 'Geologica', sans-serif;
+  --font-size: 16px;
+  
+  /* Design System - Typography Scale (P1 - Normal/400 weight) */
+  --font-size-p1-xs: 10px;
+  --font-size-p1-sm: 12px;
+  --font-size-p1-md: 14px;
+  --font-size-p1-base: 16px;
+  --font-size-p1-lg: 18px;
+  --font-size-p1-xl: 24px;
+  
+  /* Design System - Border Widths */
+  --border-width-thin: 1px;
+  --border-width-default: 2px;
+  --border-width-medium: 3px;
+  --border-width-thick: 4px;
+  
+  /* Design System - Border Styles */
+  --border-style-solid: solid;
+  --border-style-dashed: dashed;
+  --border-style-dotted: dotted;
+  
+  /* Design System - Border Colors */
+  --border-color-default: var(--color-dark-20);
+  --border-color-light: var(--color-light-100);
+  --border-color-dark: var(--color-dark-40);
+  --border-color-primary: var(--color-primary);
+  --border-color-success: var(--color-success-100);
+  --border-color-warning: var(--color-warning-100);
+  --border-color-error: var(--color-error-100);
+  
+  /* Design System - Primary Color */
+  --color-primary: #003CFF;
+  --color-secondary: #112D41;
+  
+  /* Design System - Dark Colors */
+  --color-dark-100: #1F2024;
+  --color-dark-80: #1B3344;
+  --color-dark-60: #4E585E;
+  --color-dark-40: #8B99A4;
+  --color-dark-20: #B6C2CB;
+  
+  /* Design System - Light Colors */
+  --color-light-100: #CED7DE;
+  --color-light-80: #D7E0E6;
+  --color-light-60: #E9EFF3;
+  --color-light-40: #F5F7F9;
+  --color-light-20: #F8FCFF;
+  --color-white: #FFFFFF;
+  
+  /* Design System - Success Colors */
+  --color-success-100: #00F88B;
+  --color-success-100-5: rgba(0, 248, 139, 0.05);
+  --color-success-66: #63F8B7;
+  --color-success-33: #95F7CC;
+  
+  /* Design System - Warning Colors */
+  --color-warning-100: #FF8C3A;
+  --color-warning-100-5: rgba(255, 140, 58, 0.05);
+  --color-warning-66: #FFA261;
+  --color-warning-33: #FFC499;
+  
+  /* Design System - Error Colors */
+  --color-error-100: #FF5E9B;
+  --color-error-100-5: rgba(255, 94, 155, 0.05);
+  --color-error-66: #FF88B5;
+  --color-error-33: #FFB2CE;
+  
+  /* Design System - Shadows */
+  --shadow-1: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  
+  /* Design System - Spacing (Material Design inspired) */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  
+  /* Design System - Horizontal Fluid Spacing */
+  --spacing-h-xs: clamp(4px, 1vw, 8px);
+  --spacing-h-sm: clamp(8px, 2vw, 16px);
+  --spacing-h-md: clamp(16px, 3vw, 32px);
+  --spacing-h-lg: clamp(24px, 4vw, 48px);
+  --spacing-h-xl: clamp(32px, 5vw, 64px);
+  --spacing-h-2xl: clamp(48px, 7vw, 96px);
+  --spacing-h-3xl: clamp(64px, 10vw, 128px);
+  
+  /* Design System - Vertical Fluid Spacing */
+  --spacing-v-xs: clamp(4px, 0.5vh, 8px);
+  --spacing-v-sm: clamp(8px, 1vh, 12px);
+  --spacing-v-md: clamp(16px, 2vh, 24px);
+  --spacing-v-lg: clamp(24px, 3vh, 40px);
+  --spacing-v-xl: clamp(32px, 4vh, 56px);
+  --spacing-v-2xl: clamp(48px, 6vh, 80px);
+  --spacing-v-3xl: clamp(64px, 8vh, 120px);
+  
+  /* Design System - Combined Fluid Spacing (Vertical) */
+  --spacing-vh-xs-v: clamp(4px, calc(4px + 4 * ((100vh - 560px) / 240)), 8px);
+  --spacing-vh-sm-v: clamp(8px, calc(8px + 4 * ((100vh - 560px) / 240)), 12px);
+  --spacing-vh-md-v: clamp(16px, calc(16px + 8 * ((100vh - 560px) / 240)), 24px);
+  --spacing-vh-lg-v: clamp(24px, calc(24px + 16 * ((100vh - 560px) / 240)), 40px);
+  --spacing-vh-xl-v: clamp(32px, calc(32px + 24 * ((100vh - 560px) / 240)), 56px);
+  --spacing-vh-2xl-v: clamp(48px, calc(48px + 32 * ((100vh - 560px) / 240)), 80px);
+  --spacing-vh-3xl-v: clamp(64px, calc(64px + 56 * ((100vh - 560px) / 240)), 120px);
+  
+  /* Design System - Combined Fluid Spacing (Horizontal) */
+  --spacing-vh-xs-h: clamp(4px, calc(4px + 4 * ((100vw - 375px) / 649)), 8px);
+  --spacing-vh-sm-h: clamp(8px, calc(8px + 8 * ((100vw - 375px) / 649)), 16px);
+  --spacing-vh-md-h: clamp(16px, calc(16px + 16 * ((100vw - 375px) / 649)), 32px);
+  --spacing-vh-lg-h: clamp(24px, calc(24px + 24 * ((100vw - 375px) / 649)), 48px);
+  --spacing-vh-xl-h: clamp(32px, calc(32px + 32 * ((100vw - 375px) / 649)), 64px);
+  --spacing-vh-2xl-h: clamp(48px, calc(48px + 48 * ((100vw - 375px) / 649)), 96px);
+  --spacing-vh-3xl-h: clamp(64px, calc(64px + 64 * ((100vw - 375px) / 649)), 128px);
+  
+  /* Design System - Gradient Colors (Documentation) */
+  --gradient-success-light: #B1F0D4;
+  --gradient-success-dark: #33BC80;
+  --gradient-energy-light: #C0FF9E;
+  --gradient-energy-dark: #61D125;
+  --gradient-love-light: #F18BB2;
+  --gradient-love-dark: #F15993;
+  --gradient-attention-light: #FFA9B0;
+  --gradient-attention-dark: #E9505D;
+  --gradient-fancy-light: #FF9BE7;
+  --gradient-fancy-dark: #E656C3;
+  --gradient-ice-light: #A5EDED;
+  --gradient-ice-dark: #3BC5C5;
+  --gradient-sky-light: #AEB8F3;
+  --gradient-sky-dark: #5E73E4;
+  --gradient-groundedness-light: #98D4F7;
+  --gradient-groundedness-dark: #50B7F2;
+  --gradient-community-light: #FFBE8E;
+  --gradient-community-dark: #F59855;
+  --gradient-curiosity-light: #FFF07E;
+  --gradient-curiosity-dark: #F8E33B;
+  
+  /* Design System - Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+  
+  /* Design System - Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-toast: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Design System - Icon Sizes */
+  --icon-size-xs: 12px;
+  --icon-size-sm: 16px;
+  --icon-size-md: 20px;
+  --icon-size-lg: 24px;
+  --icon-size-xl: 32px;
+  
+  /* Design System - Component Sizes */
+  --size-xs: 8px;
+  --size-sm: 20px;
+  --size-md: 32px;
+  --size-lg: 40px;
+  --size-xl: 48px;
+  --size-2xl: 64px;
+  
+  /* Design System - Avatar Sizes */
+  --avatar-size-sm: 32px;
+  --avatar-size-md: 40px;
+  --avatar-size-lg: 48px;
+  --avatar-size-xl: 64px;
+  
+  /* Design System - Avatar Status Indicator Sizes */
+  --avatar-status-sm: 8px;
+  --avatar-status-md: 10px;
+  --avatar-status-lg: 12px;
+  --avatar-status-xl: 14px;
+  
+  /* Design System - Toggle Sizes */
+  --toggle-track-width: 44px;
+  --toggle-track-height: 24px;
+  --toggle-thumb-size: 20px;
+  --toggle-thumb-offset: 2px;
+  
+  /* Design System - Modal Sizes */
+  --modal-size-sm: 400px;
+  --modal-size-md: 500px;
+  --modal-size-lg: 700px;
+  --modal-size-xl: 900px;
+  
+  /* Design System - Loading Sizes */
+  --loading-size-sm: 16px;
+  --loading-size-md: 32px;
+  --loading-size-lg: 48px;
+  
+  /* Design System - Loading Dot Sizes */
+  --loading-dot-sm: 6px;
+  --loading-dot-md: 10px;
+  --loading-dot-lg: 14px;
+  
+  /* Design System - Opacity */
+  --opacity-disabled: 0.5;
+  --opacity-overlay: 0.5;
+  --opacity-overlay-light: 0.9;
+  
+  /* Design System - Z-Index */
+  --z-index-modal: 1000;
+  --z-index-toast: 9999;
+  
+  /* Design System - Positioning */
+  --position-0: 0;
+  
+  /* Design System - Negative Margins */
+  --margin-negative-thin: -1px;
+  
+  /* Design System - Min Widths */
+  --min-width-button: 40px;
+  
+  /* Design System - Toast Sizes */
+  --toast-min-width: 300px;
+  --toast-max-width: 500px;
+  
+  /* Design System - Container Breakpoints */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  
+  /* Design System - Grid System */
+  --grid-min-column-width: 250px;
+  
+  /* Design System - Shadows (Extended) */
+  --shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  
+  /* Design System - Overlay Colors */
+  --overlay-dark: rgba(0, 0, 0, 0.5);
+  --overlay-light: rgba(255, 255, 255, 0.9);
+  
+  /* Design System - Info Colors (for Alerts/Toasts) */
+  --color-info-100: #003CFF;
+  --color-info-10: rgba(0, 60, 255, 0.1);
+  
+  /* Design System - Success Light Variant */
+  --color-success-10: rgba(0, 248, 139, 0.1);
+  
+  /* Design System - Warning Light Variant */
+  --color-warning-10: rgba(255, 140, 58, 0.1);
+  
+  /* Design System - Error Light Variant */
+  --color-error-10: rgba(255, 94, 155, 0.1);
+  
+  /* Legacy ShadCN Variables */
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  /* NOTE: Radius variables are defined by Design System above - DO NOT override here */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-family-primary);
+  }
+}
+
+/**
+ * Base typography - Design System locked definitions
+ * These styles ALWAYS apply to ensure perfect sync between Design System documentation and actual rendering.
+ * Changes here will instantly update ALL instances across the entire project.
+ */
+@layer base {
+  h1 {
+    font-family: var(--font-family-primary);
+    font-size: 40px;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-family: var(--font-family-primary);
+    font-size: 32px;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-family: var(--font-family-primary);
+    font-size: 24px;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-family: var(--font-family-primary);
+    font-size: 20px;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h5 {
+    font-family: var(--font-family-primary);
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  p {
+    font-family: var(--font-family-primary);
+    font-size: 16px;
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+
+  label {
+    font-family: var(--font-family-primary);
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-family: var(--font-family-primary);
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input, textarea {
+    font-family: var(--font-family-primary);
+    font-size: 16px;
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
