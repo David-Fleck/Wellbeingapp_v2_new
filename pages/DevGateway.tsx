@@ -1,7 +1,7 @@
 import { Button } from '../components/library/Button';
 import { Card } from '../components/library/Card';
 import { useEffect, useState } from 'react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { Database, CheckCircle } from 'lucide-react';
 
 export interface DevGatewayProps {
